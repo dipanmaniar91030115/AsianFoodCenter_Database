@@ -23,10 +23,10 @@ DROP TABLE IF EXISTS `arts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `arts` (
-  `CatID` int(2) DEFAULT NULL,
-  `Title` varchar(30) DEFAULT NULL,
-  `BirthYear` varchar(4) DEFAULT NULL,
-  `DeathYear` varchar(4) DEFAULT NULL,
+  `CatID` int(2) UNSIGNED NOT NULL,
+  `Title` varchar(30) NOT NULL,
+  `BirthYear` date(4) DEFAULT NULL,
+  `DeathYear` date(4) DEFAULT NULL,
   `Nationality` varchar(30) DEFAULT NULL,
   `KnownFor` varchar(30) DEFAULT NULL,
   `Notablework` varchar(100) DEFAULT NULL,
@@ -58,8 +58,8 @@ DROP TABLE IF EXISTS `category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `category` (
-  `CatID` int(2) NOT NULL,
-  `CategoryName` varchar(20) DEFAULT NULL,
+  `CatID` int(2) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `CategoryName` varchar(20) NOT NULL,
   PRIMARY KEY (`CatID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -82,11 +82,11 @@ DROP TABLE IF EXISTS `maths`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `maths` (
-  `CatID` int(2) DEFAULT NULL,
-  `Title` varchar(30) DEFAULT NULL,
+  `CatID` int(2) UNSIGNED NOT NULL,
+  `Title` varchar(30) NOT NULL,
   `CreatorKnownFor` varchar(30) DEFAULT NULL,
-  `BirthYear` varchar(4) DEFAULT NULL,
-  `DeathYear` varchar(4) DEFAULT NULL,
+  `BirthYear` date(4) DEFAULT NULL,
+  `DeathYear` date(4) DEFAULT NULL,
   `About` varchar(1000) DEFAULT NULL,
   KEY `CatID_idx` (`CatID`),
   CONSTRAINT `maths_ibfk_1` FOREIGN KEY (`CatID`) REFERENCES `category` (`CatID`)
@@ -111,10 +111,10 @@ DROP TABLE IF EXISTS `technology`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `technology` (
-  `CatID` int(2) DEFAULT NULL,
-  `Title` varchar(30) DEFAULT NULL,
-  `BirthYear` varchar(4) DEFAULT NULL,
-  `DeathYear` varchar(4) DEFAULT NULL,
+  `CatID` int(2) UNSIGNED NOT NULL,
+  `Title` varchar(30) NOT NULL,
+  `BirthYear` date(4) DEFAULT NULL,
+  `DeathYear` date(4) DEFAULT NULL,
   `Nationality` varchar(30) DEFAULT NULL,
   `KnownFor` varchar(50) DEFAULT NULL,
   `About` varchar(1000) DEFAULT NULL,
